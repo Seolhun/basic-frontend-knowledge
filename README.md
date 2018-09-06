@@ -17,34 +17,28 @@
 
 
 ## How to use it?
-
-### Run GitBook
+#### Run GitBook
 [GitBook documentation](https://github.com/GitbookIO/gitbook/blob/master/docs/setup.md)
 
-### Create a book
-
+#### Create a book
 - GitBook can setup a boilerplate book:
-
 ```
 $ gitbook init
 ```
 If you wish to create the book into a new directory, you can do so by running gitbook init ./directory
 
-
 - Preview and serve your book using:
-
 ```
 $ gitbook serve
 ```
 
 - Or build the static website using:
-
 ```
 $ gitbook build
 ```
 
 ### Generate a PDF file
-$ gitbook pdf ./ ./mybook.pdf
+$ gitbook pdf ./ ./be-frontend.pdf
 
 ### Generate an ePub file
 $ gitbook epub ./ ./mybook.epub
