@@ -4,6 +4,7 @@
   "description": "To serve frontend information for beginner",
   "main": "index.js",
   "scripts": {
+		"deploy": "yarn build && git commit -am 'deploy build project' && git push origin develop",
 		"dev": "gitbook serve",
 		"build": "gitbook build . docs",
 		"pdf": "gitbook pdf ./ ./be-frontend.pdf",
