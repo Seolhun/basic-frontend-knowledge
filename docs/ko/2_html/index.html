@@ -1,0 +1,392 @@
+
+<!DOCTYPE HTML>
+<html lang="ko" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>HTML · How to be WebFrontend Developer</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="[Seolhun](https://github.com/Seolhun)">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Dom.html" />
+    
+    
+    <link rel="prev" href="../1_frontend/coperative.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="검색어 입력" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../1_frontend/">
+            
+                <a href="../1_frontend/">
+            
+                    
+                    What We Do
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../1_frontend/coperative.html">
+            
+                <a href="../1_frontend/coperative.html">
+            
+                    
+                    Working with Desginer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="Dom.html">
+            
+                <a href="Dom.html">
+            
+                    
+                    Dom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="Attribute.html">
+            
+                <a href="Attribute.html">
+            
+                    
+                    Attribute
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="Property.html">
+            
+                <a href="Property.html">
+            
+                    
+                    Property
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    JavaScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBook에 게시
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >HTML</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="quest-01-hello-html">Quest 01. Hello, HTML</h1>
+<h2 id="introduction">Introduction</h2>
+<ul>
+<li>HTML&#xC740; HyperText Markup Language&#xC758; &#xC57D;&#xC790;&#xB85C;, &#xC6F9; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0; &#xB0B4;&#xC6A9;&#xC744; &#xD45C;&#xC2DC;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xAC00;&#xC7A5; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xC5B8;&#xC5B4;&#xC785;&#xB2C8;&#xB2E4;. &#xC774;&#xBC88; &#xD018;&#xC2A4;&#xD2B8;&#xB97C; &#xD1B5;&#xD574; HTML&#xC5D0; &#xAD00;&#xD55C; &#xAE30;&#xCD08;&#xC801;&#xC778; &#xC0AC;&#xD56D;&#xB4E4;&#xC744; &#xC54C;&#xC544;&#xBCFC; &#xC608;&#xC815;&#xC785;&#xB2C8;&#xB2E4;.</li>
+</ul>
+<h2 id="topics">Topics</h2>
+<ul>
+<li>&#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC758; &#xC5ED;&#xC0AC;<ul>
+<li>Mosaic</li>
+<li>Netscape</li>
+<li>Internet Explorer</li>
+<li>Firefox</li>
+<li>Chrome</li>
+<li>Safari (for iOS)</li>
+<li>Edge</li>
+</ul>
+</li>
+<li>HTML &#xD45C;&#xC900;&#xC758; &#xC5ED;&#xC0AC;<ul>
+<li>HTML 4.01</li>
+<li>XHTML 1.0, XHTML 1.1</li>
+<li>XHTML 2.0</li>
+<li>HTML5<ul>
+<li>HTML 5.3</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>HTML &#xBB38;&#xC11C;&#xC758; &#xAD6C;&#xC870;</li>
+<li>HTML &#xBB38;&#xC11C;&#xC758; &#xC5D8;&#xB9AC;&#xBA3C;&#xD2B8;<ul>
+<li>Semantic elements</li>
+<li>Block-level elements vs Inline elements</li>
+</ul>
+</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/ko/docs/Web/HTML" target="_blank">MDN - HTML</a></li>
+<li><a href="http://www.yes24.com/24/Goods/15683538?Acode=101" target="_blank">&#xBAA8;&#xB358; &#xC6F9; &#xB514;&#xC790;&#xC778;&#xC744; &#xC704;&#xD55C; HTML5+CSS3 &#xC785;&#xBB38;</a>, &#xD55C;&#xBE5B;&#xBBF8;&#xB514;&#xC5B4;</li>
+<li><a href="http://www.yes24.com/24/Goods/2808075?Acode=101" target="_blank">&#xC6F9; &#xB514;&#xC790;&#xC778; 2.0 &#xACE0;&#xAE09; CSS</a>, &#xC5D0;&#xC774;&#xCF58;&#xCD9C;&#xD310;&#xC0AC;</li>
+<li><a href="http://gs.statcounter.com/" target="_blank">StatCounter Global Stats</a></li>
+</ul>
+<h2 id="checklist">Checklist</h2>
+<ul>
+<li>HTML 4.x &#xC774;&#xD6C4;&#xC758; HTML &#xD45C;&#xC900;&#xC758; &#xBCC0;&#xCC9C;&#xC0AC;&#xB294; &#xC5B4;&#xB5BB;&#xAC8C; &#xB418;&#xB098;&#xC694;?</li>
+<li>MS&#xC640; IE&#xB294; &#xC65C; &#xC5ED;&#xC0AC;&#xC5D0; &#xC624;&#xC810;&#xC744; &#xB0A8;&#xAE30;&#xAC8C; &#xB418;&#xC5C8;&#xC744;&#xAE4C;&#xC694;?</li>
+<li><code>&lt;section&gt;</code>&#xACFC; <code>&lt;div&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code> &#xC5D8;&#xB9AC;&#xBA3C;&#xD2B8;&#xC758; &#xCC28;&#xC774;&#xC810;&#xC740; &#xBB34;&#xC5C7;&#xC778;&#xAC00;&#xC694;?</li>
+<li>&#xBE14;&#xB7ED; &#xB808;&#xBCA8; &#xC5D8;&#xB9AC;&#xBA3C;&#xD2B8;&#xC640; &#xC778;&#xB77C;&#xC778; &#xC5D8;&#xB9AC;&#xBA3C;&#xD2B8;&#xC758; &#xCC28;&#xC774;&#xB294; &#xBB34;&#xC5C7;&#xC77C;&#xAE4C;&#xC694;?</li>
+</ul>
+<h2 id="quest">Quest</h2>
+<ul>
+<li><a href="github.png">&#xC774; &#xADF8;&#xB9BC;</a>&#xC740; github&#xC758; &#xC6F9;&#xC0AC;&#xC774;&#xD2B8; &#xB808;&#xC774;&#xC544;&#xC6C3;&#xC785;&#xB2C8;&#xB2E4;. &#xC774; &#xB808;&#xC774;&#xC544;&#xC6C3;&#xC758; &#xC815;&#xBCF4;&#xB97C; HTML &#xBB38;&#xC11C;&#xB85C; &#xD45C;&#xD604;&#xD574; &#xBCF4;&#xC138;&#xC694;.</li>
+<li>CSS&#xB97C; &#xC804;&#xD600; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xACE0;, &#xBB38;&#xC11C;&#xC758; &#xAD6C;&#xC870;&#xAC00; &#xC5B4;&#xB5BB;&#xAC8C; &#xB418;&#xC5B4; &#xC788;&#xB294;&#xC9C0;&#xB97C; &#xD30C;&#xC545;&#xD558;&#xC5EC; &#xAD6C;&#xD604;&#xD574; &#xBCF4;&#xC138;&#xC694;.<ul>
+<li><a href="http://meiert.com/en/blog/20150319/css-naked-day/" target="_blank">CSS Naked Day</a>&#xB294; &#xB9E4;&#xB144; 4&#xC6D4; 9&#xC77C;&#xC5D0; CSS &#xC5C6;&#xB294; &#xC6F9; &#xD398;&#xC774;&#xC9C0;&#xB97C; &#xACF5;&#xAC1C;&#xD558;&#xC5EC; &#xB0B4;&#xC6A9;&#xACFC; &#xB9C8;&#xD06C;&#xC5C5;&#xC5D0; &#xC9D1;&#xC911;&#xD55C; HTML &#xAD6C;&#xC870;&#xC758; &#xC911;&#xC694;&#xC131;&#xC744; &#xAC15;&#xC870;&#xD558;&#xB294; &#xD589;&#xC0AC;&#xC785;&#xB2C8;&#xB2E4;.</li>
+</ul>
+</li>
+<li>&#xD3F4;&#xB354;&#xC5D0; &#xC788;&#xB294; <code>skeleton.html</code> &#xD30C;&#xC77C;&#xC744; &#xBC14;&#xD0D5;&#xC73C;&#xB85C; &#xC791;&#xC5C5;&#xD574; &#xBCF4;&#xC2DC;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../1_frontend/coperative.html" class="navigation navigation-prev " aria-label="Previous page: Working with Desginer">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Dom.html" class="navigation navigation-next " aria-label="Next page: Dom">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"HTML","level":"1.2","depth":1,"next":{"title":"Dom","level":"1.2.1","depth":2,"path":"2_html/Dom.md","ref":"2_html/Dom.md","articles":[]},"previous":{"title":"Working with Desginer","level":"1.1.2","depth":2,"path":"1_frontend/coperative.md","ref":"1_frontend/coperative.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./contents","styles":{"website":""},"pluginsConfig":{"ga":{"token":"","configuration":{"alwaysSendReferrer":true}},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"[Seolhun](https://github.com/Seolhun)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"How to be WebFrontend Developer","language":"ko","gitbook":"*","description":"How to be WebFrontend Developer"},"file":{"path":"2_html/README.md","mtime":"2018-09-05T00:43:35.749Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-06T12:52:45.770Z"},"basePath":"..","book":{"language":"ko"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
