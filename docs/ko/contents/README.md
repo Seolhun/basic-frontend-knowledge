@@ -1,26 +1,35 @@
 # Intro
-* Author : [Seolhun](https://github.com/Seolhun)
 
-## 1. FrontEnd
-* [What We Do](1_frontend/README.md)
-* [How to work with Desginer](1_frontend/coperative.md)
+## [Frontend](1-frontend/README.md)
+* [What we do](1-frontend/WhatWeDo.md)
 
-## 2. HTML
-* [HTML Dom](2_html/Dom.md)
-* [HTML Attribute](2_html/Attribute.md)
-* [HTML Dom](2_html/Property	.md)
+## [HTML](2-html/README.md)
+* [Dom](2-html/Dom.md)
+* [Attributes와 Properties](2-html/AttributeAndProperty.md)
+* [Browswer Rendering](2-html/BrowswerRendering.md)
 
-## 3. CSS
-* [HTML Dom](3_css/part1/dom.md)
-* [Sementic HTML](3_css/part1/sementic.md)
+## [CSS](3-css/README.md)
+* [Selector](3-css/Selector.md)
+* [Position](3-css/Position.md)
+* [Flex와 Grid](3-css/FlexAndGrid.md)
 
-## 4. JS
-* [HTML Dom](4_css/part1/dom.md)
-* [Sementic HTML](4_css/part1/sementic.md)
+## [JavaScript](4-js/README.md)
+* [Scope](4-js/Scope.md)
+* [Closure](4-js/Closure.md)
+* [Prototype](4-js/Prototype.md)
+* [Functional](4-js/Functional.md)
 
-----
-* [Last part without title](GLOSSARY.md)
+## References
+<!-- * [Last part without title](GLOSSARY.md) -->
 * [frontend-dev-bookmarks](https://github.com/dypsilon/frontend-dev-bookmarks)
 
-* Author : [Seolhun](https://github.com/Seolhun)
+
+## Outro
+- Author : [Seolhun](https://github.com/Seolhun)
+- Repository : [basic-frontend-knowledge](https://github.com/Seolhun/basic-frontend-knowledge)
+- Issues : [Issues](https://github.com/Seolhun/basic-frontend-knowledge/issues)
+
+
+
+
 

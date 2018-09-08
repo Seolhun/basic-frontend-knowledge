@@ -1,12 +1,23 @@
 # How to be Front-End Developer
 
-* [Introduction](README.md)
-	* [What We Do](1_frontend/README.md)
-	* [Working with Desginer](1_frontend/coperative.md)
-* [HTML](2_html/README.md)
-	* [Dom](2_html/Dom.md)
-	* [Attribute](2_html/Attribute.md)
-	* [Property](2_html/Property.md)
-* [CSS](README.md)
-* [JavaScript](README.md)
+* [Content List](README.md)
+
+* [Frontend](1-frontend/README.md)
+	* [What we do](1-frontend/WhatWeDo.md)
+
+* [HTML](2-html/README.md)
+	* [Dom](2-html/Dom.md)
+	* [Attributes와 Properties](2-html/AttributeAndProperty.md)
+	* [Browswer Rendering](2-html/BrowswerRendering.md)
+
+* [CSS](3-css/README.md)
+	* [Selector](3-css/Selector.md)
+	* [Position](3-css/Position.md)
+	* [Flex와 Grid](3-css/FlexAndGrid.md)
+
+* [JavaScript](4-js/README.md)
+	* [Scope](4-js/Scope.md)
+	* [Closure](4-js/Closure.md)
+	* [Prototype](4-js/Prototype.md)
+	* [Functional](4-js/Functional.md)
 
