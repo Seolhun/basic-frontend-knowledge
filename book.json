@@ -9,9 +9,7 @@
 		"summary": "SUMMARY.md",
 		"glossary": "GLOSSARY.md"
 	},
-	"pdf": {
-
-	},
+	"pdf": {},
 	"plugins": [],
 	"pluginsConfig": {
 		"ga": {
