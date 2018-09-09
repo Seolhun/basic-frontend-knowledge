@@ -20,12 +20,15 @@
 * [Prototype](4-js/Prototype.md)
 * [Functional](4-js/Functional.md)
 
+## [Git](git/README.md)
+* [Basic](git/Basic.md) - init, commit, branch, push
+
 ## References
-<!-- * [Last part without title](GLOSSARY.md) -->
 * [frontend-dev-bookmarks](https://github.com/dypsilon/frontend-dev-bookmarks)
 
 ## Outro
 - Author : [Seolhun](https://github.com/Seolhun)
+	* [About me](GLOSSARY.md)
 - Repository : [basic-frontend-knowledge](https://github.com/Seolhun/basic-frontend-knowledge)
 - Issues : [Issues](https://github.com/Seolhun/basic-frontend-knowledge/issues)
 

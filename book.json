@@ -9,8 +9,6 @@
 		"summary": "SUMMARY.md",
 		"glossary": "GLOSSARY.md"
 	},
-	"pdf": {},
-	"plugins": [],
 	"pluginsConfig": {
 		"ga": {
 				"token": "",
@@ -19,7 +17,8 @@
 				}
 		}
 	},
+	"plugins": [],
 	"styles": {
-		"website": ""
+		"website": "styles/website.css"
 	}
 }
