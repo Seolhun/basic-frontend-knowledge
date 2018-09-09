@@ -73,6 +73,11 @@ Staging Area에 올려진 파일들을 Local Repository로 이동시킵니다.
 $ git add *
 $ git commit -m "First Commit"
 ```
+```bash
+$ git commit -m "Message" -m "Description"
+```
+
+> -m은 message라는 약어입니다. commit에 대한 내용을 간단히 입력해주세요. 더 자세한 내용을 기록하고 싶으면 -m을 한번 더 사용하여 Description을 채워주세요.
 
 ## Push
 Local Repository에 있는 File들을 Remote Repository로 전송합니다.
@@ -80,6 +85,7 @@ Local Repository에 있는 File들을 Remote Repository로 전송합니다.
 ```bash
 $ git push origin master
 ```
+> origin은 remote repository와 연결된 주소의 이름입니다. origin이 default 값이며, 이를 본인 혹은 팀 규칙에 맞게 변경하여 사용할 수 있습니다.
 
 아마 정상적으로 작동되지 않을 것입니다. 왜냐하면, 위에서 언급했듯이 기본적으로 Git에는 Remote Repository가 연결되지 않기 때문입니다. 어느 Remote Repository를 연결할지 개발자가 직접 지정해주어야 합니다. Github에 Remote Repository를 만들고 현재 Local Repository와 연결해봅시다.
 
