@@ -12,7 +12,7 @@
 ## [CSS](3-css/README.md)
 * [Selector](3-css/Selector.md)
 * [Position](3-css/Position.md)
-* [Flex와 Grid](3-css/FlexAndGrid.md)
+* [Grid와 Flex 그리고 Block](3-css/FlexAndGridAndBlock.md)
 
 ## [JavaScript](4-js/README.md)
 * [Scope](4-js/Scope.md)
