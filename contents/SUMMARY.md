@@ -8,13 +8,18 @@
 * [HTML](2-html/README.md)
 	* [Dom](2-html/Dom.md)
 	* [Attributes와 Properties](2-html/AttributeAndProperty.md)
-	* [Bubbling와 Capturing](2-html/BubblingAndCapturing.md)
+	* [Event](2-html/event/README.md)
+		* [HTMLEvent](2-html/event/HTMLEvent.md)
+		* [Bubbling과 Capturing](2-html/event/BubblingAndCapturing.md)
 	* [Browswer Rendering](2-html/BrowswerRendering.md)
 
 * [CSS](3-css/README.md)
 	* [Selector](3-css/Selector.md)
 	* [Position](3-css/Position.md)
-	* [Grid와 Flex 그리고 Block](3-css/FlexAndGridAndBlock.md)
+	* [Display](3-css/display/README.md)
+		* [Grid](3-css/display/Grid.md)
+		* [Flex](3-css/display/Flex.md)
+		* [Block](3-css/display/Block.md)
 
 * [JavaScript](4-js/README.md)
 	* [Scope](4-js/Scope.md)
@@ -22,5 +27,6 @@
 	* [Prototype](4-js/Prototype.md)
 	* [Functional](4-js/Functional.md)
 
-* [Git](git/README.md)
-	* [Basic](git/Basic.md) - init, commit, branch, push
+* [Git](0-git/README.md)
+	* [Basic1](0-git/Basic.md) - init, commit, branch, push
+	* [Basic2](0-git/Basic2.md) - merge, pull, ignore,

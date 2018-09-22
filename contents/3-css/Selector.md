@@ -1,2 +1,2 @@
-# CSS, Selector
+# CSS - Selector
 
