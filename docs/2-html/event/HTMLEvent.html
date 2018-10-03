@@ -494,6 +494,92 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="html---htmlevent">HTML - HTMLEvent</h1>
+<p>Event &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB294; DOM&#xC758; &#xBAA8;&#xB4E0; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xD45C;&#xD604;&#xD569;&#xB2C8;&#xB2E4;.
+&#xC77C;&#xBD80;&#xB294; &#xB9C8;&#xC6B0;&#xC2A4;&#xB098; &#xD0A4;&#xBCF4;&#xB4DC; &#xB4F1; &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC720;&#xB3C4;&#xD558;&#xB294; &#xC774;&#xBCA4;&#xD2B8;&#xACE0;, &#xC77C;&#xBD80;&#xB294; &#xC560;&#xB2C8;&#xBA54;&#xC774;&#xC158; &#xC885;&#xB8CC;&#xC640; &#xBE44;&#xB514;&#xC624; &#xC77C;&#xC2DC;&#xC815;&#xC9C0; &#xB4F1; API&#xC5D0;&#xC11C; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.
+&#xB9CE;&#xC740; &#xC885;&#xB958;&#xC758; &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xACE0;, &#xBA87;&#xBA87;&#xC740; Event &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xAE30;&#xBC18;&#xD55C; &#xB2E4;&#xB978; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. Event &#xC790;&#xCCB4;&#xB294; &#xBAA8;&#xB4E0; &#xC774;&#xBCA4;&#xD2B8; &#xACF5;&#xD1B5;&#xC758; &#xC18D;&#xC131;&#xACFC; &#xBA54;&#xC11C;&#xB4DC;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<blockquote>
+<p>&#xC804;&#xC5ED;&#xC5D0; &#xC120;&#xC5B8;&#xB418;&#xC5B4;&#xC788;&#xB294; TypeScript&#xC5D0; &#xC815;&#xC758;&#xB41C; Event &#xC885;&#xB958;&#xB4E4;</p>
+</blockquote>
+<pre><code class="lang-ts"><span class="hljs-keyword">interface</span> Event { }
+<span class="hljs-keyword">interface</span> AnimationEvent <span class="hljs-keyword">extends</span> Event { }
+<span class="hljs-keyword">interface</span> ClipboardEvent <span class="hljs-keyword">extends</span> Event { }
+<span class="hljs-keyword">interface</span> CompositionEvent <span class="hljs-keyword">extends</span> Event { }
+<span class="hljs-keyword">interface</span> DragEvent <span class="hljs-keyword">extends</span> Event { }
+<span class="hljs-keyword">interface</span> FocusEvent <span class="hljs-keyword">extends</span> Event { }
+<span class="hljs-keyword">interface</span> KeyboardEvent <span class="hljs-keyword">extends</span> Event { }
+<span class="hljs-keyword">interface</span> MouseEvent <span class="hljs-keyword">extends</span> Event { }
+<span class="hljs-keyword">interface</span> TouchEvent <span class="hljs-keyword">extends</span> Event { }
+<span class="hljs-keyword">interface</span> PointerEvent <span class="hljs-keyword">extends</span> Event { }
+<span class="hljs-keyword">interface</span> TransitionEvent <span class="hljs-keyword">extends</span> Event { }
+<span class="hljs-keyword">interface</span> UIEvent <span class="hljs-keyword">extends</span> Event { }
+<span class="hljs-keyword">interface</span> WheelEvent <span class="hljs-keyword">extends</span> Event { }
+</code></pre>
+<h2 id="event-properties">Event Properties</h2>
+<ul>
+<li>Event.cancelBubble<ul>
+<li>A historical alias to Event.stopPropagation(). Setting its value to true before returning from an event handler prevents propagation of the event.</li>
+</ul>
+</li>
+<li>Event.cancelable Read only<ul>
+<li>&#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xCDE8;&#xC18C;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &#xBD88;&#xB9B0; &#xAC12;&#xC785;&#xB2C8;&#xB2E4;.</li>
+</ul>
+</li>
+<li>Event.currentTarget Read only<ul>
+<li>A reference to the currently registered target for the event. This is the object to which the event is currently slated to be sent; it&apos;s possible this has been changed along the way through retargeting.</li>
+</ul>
+</li>
+<li>Event.eventPhase Read only<ul>
+<li>Indicates which phase of the event flow is being processed.</li>
+</ul>
+</li>
+<li>Event.target Read only<ul>
+<li>A reference to the target to which the event was originally dispatched.</li>
+</ul>
+</li>
+<li>Event.type Read only<ul>
+<li>&#xC774;&#xBCA4;&#xD2B8;&#xC758; &#xC774;&#xB984;&#xC785;&#xB2C8;&#xB2E4;. &#xB300;&#xC18C;&#xBB38;&#xC790;&#xB97C; &#xAD6C;&#xBD84;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+</li>
+<li>Event.isTrusted Read only<ul>
+<li>&#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xD074;&#xB9AD; &#xB4F1;&#xC73C;&#xB85C; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xAC00; &#xC0DD;&#xC131;&#xD588;&#xB294;&#xC9C0;, &#xC544;&#xB2C8;&#xBA74; new Event() &#xB4F1; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0;&#xC11C; &#xC0DD;&#xC131;&#xD588;&#xB294;&#xC9C0; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>&#xCD94;&#xAC00;&#xC801;&#xC778; Dom Event &#xC18D;&#xC131;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xBCF4;&#xACE0;&#xC2F6;&#xC73C;&#xC2DC;&#xBA74; &#xC544;&#xB798; &#xC8FC;&#xC18C;&#xB97C; &#xD074;&#xB9AD;&#xD574;&#xC8FC;&#xC138;&#xC694;.</p>
+<ul>
+<li><a href="https://developer.mozilla.org/ko/docs/Web/API/Event#Properties" target="_blank">HTML - Dom Event Properties</a></li>
+</ul>
+</blockquote>
+<h4 id="eventtarget">event.target</h4>
+<p>Event&#xB294; &#xB2E4;&#xB978; Element&#xC5D0; &#xC804;&#xD30C;&#xB418;&#xC5B4;&#xB3C4; &#xC774;&#xBCA4;&#xD2B8;&#xC758; &#xADFC;&#xC6D0;&#xC774; &#xC815;&#xD655;&#xD788; &#xC5B4;&#xB514;&#xC11C; &#xBC1C;&#xC0DD;&#xB418;&#xC5C8;&#xB294;&#xC9C0;&#xB97C; &#xC54C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB7EC;&#xD55C; &#xC815;&#xBCF4;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294; &#xAC83;&#xC774; &#xBC14;&#xB85C; <code>event.target</code>&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>Note the differences from <code>this</code> (=<code>event.currentTarget</code>):</p>
+<ul>
+<li><code>event.target</code> -- is the &quot;target&quot; element that initiated the event, it doesn&apos;t change through the bubbling process.</li>
+<li><code>this</code> -- is the &quot;current&quot; element, the one that has a currently running handler on it.</li>
+</ul>
+<p>For instance, if we have a single handler <code>form.onclick</code>, then it can &quot;catch&quot; all clicks inside the form. No matter where the click happened, it bubbles up to <code>&lt;form&gt;</code> and runs the handler.</p>
+<p>In <code>form.onclick</code> handler:</p>
+<ul>
+<li><code>this</code> (<code>=event.currentTarget</code>) is the <code>&lt;form&gt;</code> element, because the handler runs on it.</li>
+<li><code>event.target</code> is the concrete element inside the form that actually was clicked.</li>
+</ul>
+<p>Check it out:</p>
+<p>[codetabs height=220 src=&quot;bubble-target&quot;]</p>
+<p>It&apos;s possible that <code>event.target</code> equals <code>this</code> -- when the click is made directly on the <code>&lt;form&gt;</code> element.</p>
+<h2 id="event-methods">Event Methods</h2>
+<h4 id="eventprevnetdefault">event.prevnetDefault()</h4>
+<h4 id="eventstoppropagation">event.stopPropagation()</h4>
+<h4 id="eventstoppropagation">event.stopPropagation()</h4>
+<h2 id="examples">Examples</h2>
+<script async src="//jsfiddle.net/SHun10114/bwtp6vh9/embed/js,html,result/"></script>
+
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/ko/docs/Web/API/Event" target="_blank">HTML - Dom : Event</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank">HTML - Dom : Event Type</a></li>
+<li><a href="https://developer.mozilla.org/ko/docs/Web/API/EventTarget/addEventListener" target="_blank">HTML - Dom : addEventListener</a></li>
+</ul>
 
                                 
                                 </section>
@@ -537,7 +623,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"HTMLEvent","level":"1.3.3.1","depth":3,"next":{"title":"Bubbling과 Capturing","level":"1.3.3.2","depth":3,"path":"2-html/event/BubblingAndCapturing.md","ref":"2-html/event/BubblingAndCapturing.md","articles":[]},"previous":{"title":"Event","level":"1.3.3","depth":2,"path":"2-html/event/README.md","ref":"2-html/event/README.md","articles":[{"title":"HTMLEvent","level":"1.3.3.1","depth":3,"path":"2-html/event/HTMLEvent.md","ref":"2-html/event/HTMLEvent.md","articles":[]},{"title":"Bubbling과 Capturing","level":"1.3.3.2","depth":3,"path":"2-html/event/BubblingAndCapturing.md","ref":"2-html/event/BubblingAndCapturing.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"root":"./contents","styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"token":"","configuration":{"alwaysSendReferrer":true}},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"[Seolhun](https://github.com/Seolhun)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"How to be WebFrontend Developer","gitbook":">= 3.0.0","description":"How to be WebFrontend Developer"},"file":{"path":"2-html/event/HTMLEvent.md","mtime":"2018-09-22T09:17:55.480Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-22T11:23:05.785Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"HTMLEvent","level":"1.3.3.1","depth":3,"next":{"title":"Bubbling과 Capturing","level":"1.3.3.2","depth":3,"path":"2-html/event/BubblingAndCapturing.md","ref":"2-html/event/BubblingAndCapturing.md","articles":[]},"previous":{"title":"Event","level":"1.3.3","depth":2,"path":"2-html/event/README.md","ref":"2-html/event/README.md","articles":[{"title":"HTMLEvent","level":"1.3.3.1","depth":3,"path":"2-html/event/HTMLEvent.md","ref":"2-html/event/HTMLEvent.md","articles":[]},{"title":"Bubbling과 Capturing","level":"1.3.3.2","depth":3,"path":"2-html/event/BubblingAndCapturing.md","ref":"2-html/event/BubblingAndCapturing.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"root":"./contents","styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"token":"","configuration":{"alwaysSendReferrer":true}},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"[Seolhun](https://github.com/Seolhun)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"How to be WebFrontend Developer","gitbook":">= 3.0.0","description":"How to be WebFrontend Developer"},"file":{"path":"2-html/event/HTMLEvent.md","mtime":"2018-10-03T03:51:30.633Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-03T05:29:19.978Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
