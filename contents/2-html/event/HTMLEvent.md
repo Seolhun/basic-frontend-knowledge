@@ -38,17 +38,37 @@ interface WheelEvent extends Event { }
 - Event.isTrusted Read only
 	- 이벤트를 사용자의 클릭 등으로 브라우저가 생성했는지, 아니면 new Event() 등 스크립트에서 생성했는지 나타냅니다.
 
-
 > 추가적인 Dom Event 속성에 대해서 보고싶으시면 아래 주소를 클릭해주세요.
 - [HTML - Dom Event Properties](https://developer.mozilla.org/ko/docs/Web/API/Event#Properties)
 
+#### event.target
+Event는 다른 Element에 전파되어도 이벤트의 근원이 정확히 어디서 발생되었는지를 알 수 있습니다. 이러한 정보를 가지고 있는 것이 바로 `event.target`입니다.
+
+Note the differences from `this` (=`event.currentTarget`):
+- `event.target` -- is the "target" element that initiated the event, it doesn't change through the bubbling process.
+- `this` -- is the "current" element, the one that has a currently running handler on it.
+
+For instance, if we have a single handler `form.onclick`, then it can "catch" all clicks inside the form. No matter where the click happened, it bubbles up to `<form>` and runs the handler.
+
+In `form.onclick` handler:
+
+- `this` (`=event.currentTarget`) is the `<form>` element, because the handler runs on it.
+- `event.target` is the concrete element inside the form that actually was clicked.
+
+Check it out:
+
+[codetabs height=220 src="bubble-target"]
+
+It's possible that `event.target` equals `this` -- when the click is made directly on the `<form>` element.
+
+
 ## Event Methods
-
-
+#### event.prevnetDefault()
+#### event.stopPropagation()
+#### event.stopPropagation()
 
 ## Examples
 <script async src="//jsfiddle.net/SHun10114/bwtp6vh9/embed/js,html,result/"></script>
-
 
 ## References
 - [HTML - Dom : Event](https://developer.mozilla.org/ko/docs/Web/API/Event)
