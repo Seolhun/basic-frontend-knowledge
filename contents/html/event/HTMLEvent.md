@@ -29,6 +29,8 @@ interface WheelEvent extends Event { }
 	- A reference to the currently registered target for the event. This is the object to which the event is currently slated to be sent; it's possible this has been changed along the way through retargeting.
 - Event.type (Read only)
 	- Event의 이름입니다. 대소문자를 구분하지 않습니다.
+- Event.returnValue
+	- A historical property introduced by Internet Explorer and eventually adopted into the DOM specification in order to ensure existing sites continue to work. Ideally, you should try to use Event.preventDefault() and Event.defaultPrevented instead, but you can use returnValueif you choose to do so.
 - Event.cancelable (Read only)
 	- Event를 취소할 수 있는지 나타내는 불린 값입니다.
 - Event.cancelBubble
@@ -69,11 +71,45 @@ Event는 항상 전파되는 속성을 갖고 있기 때문에, 현재 Event가 
 
 예를 들어, `addEventListener('click', ...)` 혹은, `<button onclick='handler'>Hello</button>`처럼 Event가 할당된다면 type은 'click'이란 정보를 저희에게 제공해줄 것입니다.
 
+#### - event.returnValue
+
 #### - event.cancelable
 
-#### - event.cancelBubble
+#### event.cancelBubble
+cancelBubble는 기본값이 false이며, true로 할 경우 event.stopPropagation()과 같은 효과로 이벤트 전파(버블링)를 취소할 수 있습니다.
 
-#### - event.eventPhase
+```js
+const button = document.getElementById('#Button');
+button.onclick = function(event) {
+	event.cancelBubble = true;
+}
+```
+
+#### event.eventPhase
+eventPhase는 이벤트 핸들러가 호출된 단계입니다. 값으로서 1은 캡처링 2는 타겟, 3은 버블링 단계입니다.
+
+```js
+const button = document.getElementById('#Button');
+button.onclick = function(event) {
+	alert(event.eventPhase); // 2
+}
+button.addEventListener('onclick', function(event) {
+	alert(event.eventPhase); // 1
+}, true);
+button.addEventListener('onclick', function(event) {
+	alert(event.eventPhase); // 3
+});
+```
+
+#### Event.returnValue
+returnValue는 기본값이 true이며, false 할 경우 event.preventDefault()과 같은 효과로 이벤트 전파를 취소할 수 있습니다.
+
+```js
+const button = document.getElementById('#Button');
+button.onclick = function(event) {
+	event.returnValue = false;
+}
+```
 
 ---
 ## Event Methods
