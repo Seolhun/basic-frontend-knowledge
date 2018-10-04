@@ -18,20 +18,20 @@
 
 그것은 바로 Event가 전파된다는 것을 더 쉽게 이해하기 위함입니다. 우리가 들어가기에 앞서 조금만 더 생각해보면 Tree구조에서 Event가 발생되었을 때, 해당 Event가 어디서 발생되었는지 혹은 어디까지 전파해야할지를 정의해야 할 필요가 있다는 생각을 가질 수 있다면 아주 👍 입니다. 👏
 
-이러한 생각을 가지고 Event Transper에 대한 Bubbling과 Capturing에 대해서 알아봅시다.
+이러한 생각을 가지고 Event Propagation에 대한 Bubbling과 Capturing에 대해서 알아봅시다.
 
 ---
 # Event Propagation
 예제를 살펴보며 간단하게 Event 전파에 대해 알아보겠습니다.
 
-> Event Transper Example
+> Event Propagation Example
 <script async src="//jsfiddle.net/SHun10114/7nveo3qw/embed/html,result/"></script>
 
 우리는 `<div>`에 Event Handler(이상 Event)를 할당하였지만, 우리가 `<em>` 또는 `<code>`를 클릭하면 해당 Event를 볼 수 있습니다.
 
 조금 이상하게 느낄 수 있습니다. 분명 `<em>` 또는 `<code>`를 클릭하였는데, 왜 `<div>`의 Event가 실행이 되는 것일까요?
 
-이러한 현상들을 `Event Transper`라고 정의하며 이에 관련하여 Bubbling과 Capturing이라는 표현을 사용합니다. 이제 Bubbling과 Capturingd에 대해서 더 자세히 알아보겠습니다.
+이러한 현상들을 `Event Propagation`라고 정의하며 이에 관련하여 Bubbling과 Capturing이라는 표현을 사용합니다. 이제 Bubbling과 Capturingd에 대해서 더 자세히 알아보겠습니다.
 
 ---
 ## Bubbling
