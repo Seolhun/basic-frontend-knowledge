@@ -56,7 +56,7 @@
 
 이처럼, 이벤트가 위로 끊임없이 전파된다고 하여 Bubbling이라고 합니다.
 
-> ⚠️ 중요한 것은, 대부분의 이벤트는 Bubbling이 발생됩니다. 대부분이라는 표현을 쓴 이유는 `focus`와 같은 Event는 Bubbling되지 않기 떄문입니다.
+> ⚠️ 중요한 것은, 대부분의 이벤트는 Bubbling이 발생됩니다. 대부분이라는 표현을 쓴 이유는 `focus`와 같은 Event는 Bubbling되지 않기 때문입니다.
 
 ---
 ## Stopping bubbling
@@ -110,7 +110,7 @@ Bubbling과는 반대로 작동되는 Event 전파를 `Capturing`이라고 부�
 1. `HTML` -> `BODY` -> `FORM` -> `DIV` -> `P` (capturing phase, the first listener), and then:
 2. `P` -> `DIV` -> `FORM` -> `BODY` -> `HTML` (bubbling phase, the second listener).
 
-주목할 부분은, `P`는 두번 나타나는데 Capturing이 끝날때와 Bubbling이 시작할 떄입니다. `event.eventPhase`의 속성을 통해 현재 Event의 Flow를 알 수 있습니다.(거의 사용하진 않습니다.)
+주목할 부분은, `P`는 두번 나타나는데 Capturing이 끝날때와 Bubbling이 시작할 때입니다. `event.eventPhase`의 속성을 통해 현재 Event의 Flow를 알 수 있습니다.(거의 사용하진 않습니다.)
 
 ---
 ## Summary
