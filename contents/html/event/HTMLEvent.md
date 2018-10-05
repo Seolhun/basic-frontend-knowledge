@@ -23,20 +23,20 @@ interface WheelEvent extends Event { }
 
 ---
 ## Event Properties
-- Event.target (Read only)
-	- A reference to the target to which the event was originally dispatched.
-- Event.currentTarget (Read only)
-	- A reference to the currently registered target for the event. This is the object to which the event is currently slated to be sent; it's possible this has been changed along the way through retargeting.
-- Event.type (Read only)
+- event.target (Read only)
+	- 이벤트가 최초로 Dispatch 된 Target 참조입니다.
+- event.currentTarget (Read only)
+	- 이벤트에 대해 현재 등록 된 대상에 대한 참조입니다. 이것은 이벤트가 현재 전송 될 예정인 객체입니다.
+- event.type (Read only)
 	- Event의 이름입니다. 대소문자를 구분하지 않습니다.
-- Event.returnValue
-	- A historical property introduced by Internet Explorer and eventually adopted into the DOM specification in order to ensure existing sites continue to work. Ideally, you should try to use Event.preventDefault() and Event.defaultPrevented instead, but you can use returnValueif you choose to do so.
-- Event.cancelable (Read only)
+- event.returnValue
+	- 기존 사이트가 계속 작동하도록 Internet Explorer에서 도입되고 DOM 사양에 채택 된 역사적 속성, 이상적으로는 대신 event.preventDefault() 및 event.defaultPrevented를 사용하려고 시도해야하지만 returnValue를 사용하여 그렇게 할 수 있습니다.
+- event.cancelable (Read only)
 	- Event를 취소할 수 있는지 나타내는 불린 값입니다.
-- Event.cancelBubble
-	- A historical alias to Event.stopPropagation(). Setting its value to true before returning from an event handler prevents propagation of the event.
-- Event.eventPhase (Read only)
-	- Indicates which phase of the event flow is being processed.
+- event.cancelBubble
+	- event.stopPropagation ()의 기록 별칭입니다. 이벤트 핸들러에서 리턴되기 전에 값을 true로 설정하면 이벤트 전파가 방지됩니다.
+- event.eventPhase (Read only)
+	- 처리중인 이벤트 흐름의 단계를 나타냅니다.
 
 > 추가적인 Dom Event 속성에 대해서 보고싶으시면 아래 주소를 클릭해주세요.
 - [HTML - Dom Event Properties](https://developer.mozilla.org/ko/docs/Web/API/Event#Properties)
@@ -44,38 +44,27 @@ interface WheelEvent extends Event { }
 #### - event.target
 Event는 다른 Element에 전파되어도 Event의 근원이 정확히 어디서 발생되었는지를 알 수 있습니다. 이러한 정보를 가지고 있는 것이 바로 `event.target`입니다.
 
-Note the differences from `this` ( = `event.currentTarget`):
-- `event.target` -- is the "target" element that initiated the event, it doesn't change through the bubbling process.
-- `this` -- is the "current" element, the one that has a currently running handler on it.
-
-For instance, if we have a single handler `form.onclick`, then it can "catch" all clicks inside the form. No matter where the click happened, it bubbles up to `<form>` and runs the handler.
-
-In `form.onclick` handler:
-
-- `this` (`= event.currentTarget`) is the `<form>` element, because the handler runs on it.
-- `event.target` is the concrete element inside the form that actually was clicked.
-
-Check it out:
-
-[codetabs height=220 src="bubble-target"]
-
-It's possible that `event.target` equals `this` -- when the click is made directly on the `<form>` element.
-
 #### - event.currentTarget
 Event의 currentTarget은 Event의 근원(event.target)과는 다릅니다.
 Event는 항상 전파되는 속성을 갖고 있기 때문에, 현재 Event가 전파되어 작동되는 Event가 다르기 때문입니다.
 이렇게 전파되고 있는 Event가 어디에 위치하였는지에 대한 정보를 알기 위해 currentTarget이란 속성을 사용할 수 있습니다.
+
+> event.target & event.currentTarget Example
+<script async src="//jsfiddle.net/SHun10114/uq8Lbdk3/12/embed/js,html,result/"></script>
 
 #### - event.type
 현재 Event가 어떠한 type으로 동작하는지를 알 수 있습니다.
 
 예를 들어, `addEventListener('click', ...)` 혹은, `<button onclick='handler'>Hello</button>`처럼 Event가 할당된다면 type은 'click'이란 정보를 저희에게 제공해줄 것입니다.
 
-#### - event.returnValue
-
 #### - event.cancelable
+이벤트를 취소할 수 있는 가능여부에 따라 true 또는 false가 됩니다.
 
-#### event.cancelBubble
+```js
+const isCancelable = event.cancelable; // true or false
+```
+
+#### - event.cancelBubble
 cancelBubble는 기본값이 false이며, true로 할 경우 event.stopPropagation()과 같은 효과로 이벤트 전파(버블링)를 취소할 수 있습니다.
 
 ```js
@@ -85,7 +74,7 @@ button.onclick = function(event) {
 }
 ```
 
-#### event.eventPhase
+#### - event.eventPhase
 eventPhase는 이벤트 핸들러가 호출된 단계입니다. 값으로서 1은 캡처링 2는 타겟, 3은 버블링 단계입니다.
 
 ```js
@@ -101,7 +90,7 @@ button.addEventListener('onclick', function(event) {
 });
 ```
 
-#### Event.returnValue
+#### - event.returnValue
 returnValue는 기본값이 true이며, false 할 경우 event.preventDefault()과 같은 효과로 이벤트 전파를 취소할 수 있습니다.
 
 ```js
@@ -110,6 +99,9 @@ button.onclick = function(event) {
 	event.returnValue = false;
 }
 ```
+
+> Event properties Examples
+<script async src="//jsfiddle.net/SHun10114/bwtp6vh9/embed/js,html,result/"></script>
 
 ---
 ## Event Methods
@@ -131,9 +123,6 @@ Event Bubbling에과 Capturing에 있어 현재 Event 이후의 전파를 막습
 즉, 개발자에 의해 Capturing 이벤트가 주어졌을 떄, 전파가 방지되야하는 곳에 해당 메소드를 선언하면 쉽게 해결할 수 있습니다..
 
 해당 메소드는 [BubblingAndCapturing](/html/event/BubblingAndCapturing)에서 더 알아보도록 하겠습니다.
-
-## Examples
-<script async src="//jsfiddle.net/SHun10114/bwtp6vh9/embed/js,html,result/"></script>
 
 ---
 ## References
