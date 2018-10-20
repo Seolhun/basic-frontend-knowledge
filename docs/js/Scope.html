@@ -525,7 +525,102 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="javascript-scope">Javascript, Scope</h1>
+                                <h1 id="javascript-variable-and-scope">Javascript, Variable and Scope?</h1>
+<p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB294; ECMAScript &#xC5B8;&#xC5B4; &#xBA85;&#xC138;&#xB97C; &#xB530;&#xB974;&#xACE0; &#xC788;&#xB2E4;. &#xC774; <a href="https://www.ecma-international.org/ecma-262/8.0/index.html#sec-executable-code-and-execution-contexts" target="_blank">&#xBA85;&#xC138; 8&#xC7A5;</a>&#xC758; &#xC2E4;&#xD589;&#xCF54;&#xB4DC;&#xC640; &#xC2E4;&#xD589;&#xCEE8;&#xD14D;&#xC2A4;&#xD2B8; &#xBD80;&#xBD84;&#xC5D0;&#xC11C; &#xC2A4;&#xCF54;&#xD504;&#xC5D0; &#xAD00;&#xD55C; &#xB3D9;&#xC791; &#xBC29;&#xC2DD;&#xC744; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<p>&#xAC04;&#xB2E8;&#xD558;&#xAC8C; Scope&#xB780;?, JavaScript &#xB0B4;&#xC5D0;&#xC11C; &#xBCC0;&#xC218;&#xB098; &#xD568;&#xC218;, &#xD639;&#xC740; &#xAC1D;&#xCCB4;&#xC5D0; &#xB300;&#xD55C; &#xBC94;&#xC704;&#xB97C; &#xC9C0;&#xC815;&#xD574;&#xC8FC;&#xAE30; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.
+JavaScript(ES6)&#xB294; Function level&#xACFC; Block Level, Lexical Scope &#xADDC;&#xCE59;&#xC744; &#xB530;&#xB985;&#xB2C8;&#xB2E4;.</p>
+<h2 id="variables">Variables</h2>
+<p>&#xBAA8;&#xB4E0; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xC5B8;&#xC5B4;&#xC5D0;&#xB294; &#xBCC0;&#xC218;&#xAC00; &#xC874;&#xC7AC; &#xD569;&#xB2C8;&#xB2E4;. &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC740; &#xC774;&#xB7EC;&#xD55C; &#xBCC0;&#xC218;&#xB97C; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xBB38;&#xC81C;&#xB97C; &#xD574;&#xACB0;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
+<p>&#xBCC0;&#xC218;&#xAC00; &#xAC16;&#xB294; &#xD2B9;&#xC9D5;&#xC740; &#xD56D;&#xC0C1; &#xBA54;&#xBAA8;&#xB9AC;&#xB97C; &#xCC28;&#xC9C0;&#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. &#xC5B4;&#xB5A0;&#xD55C; &#xBB3C;&#xB9AC;&#xC801; &#xAE30;&#xACC4;&#xAC00; &#xC774;&#xD574;&#xD560; &#xC218; &#xC788;&#xB294; &#xC5B8;&#xC5B4;&#xB85C; &#xAD6C;&#xC131;&#xB41C; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xC5B8;&#xC5B4;&#xB4E4;&#xC740; &#xD56D;&#xC0C1; &#xC5B4;&#xB518;&#xAC00; &#xBB3C;&#xB9AC;&#xC801; &#xC800;&#xC7A5;&#xC18C;&#xC5D0; &#xC800;&#xC7A5;&#xB418;&#xC5B4; &#xC788;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.
+&#xC800;&#xC7A5;&#xB418;&#xB294; &#xBC29;&#xC2DD;&#xACFC; &#xCC98;&#xB9AC;&#xB418;&#xB294; &#xBC29;&#xC2DD;&#xC5D0; &#xB530;&#xB77C; &#xB2E4;&#xC591;&#xD55C; &#xBA85;&#xCE6D;&#xC774; &#xB098;&#xB204;&#xC5B4;&#xC9C0;&#xC9C0;&#xB9CC;, &#xBCC0;&#xC218;&#xB294; &#xD56D;&#xC0C1; &#xBA54;&#xB85C;&#xB9AC;&#xB97C; &#xCC28;&#xC9C0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<p>&#xADF8;&#xB807;&#xB2E4;&#xBA74;, &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0;&#xC11C;&#xB294; &#xBCC0;&#xC218;&#xB97C; &#xC5B4;&#xB5BB;&#xAC8C; &#xC120;&#xC5B8;&#xD558;&#xACE0; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD560;&#xAE4C;&#xC694;?</p>
+<h2 id="&#xC120;&#xC5B8;&#xACFC;-&#xD560;&#xB2F9;">&#xC120;&#xC5B8;&#xACFC; &#xD560;&#xB2F9;</h2>
+<p>&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC758; &#xBCC0;&#xC218;&#xB97C; &#xB9CC;&#xB4E4;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294; &#xC120;&#xC5B8;&#xACFC; &#xD560;&#xB2F9;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xC54C;&#xACE0; &#xB118;&#xC5B4;&#xAC00;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<h4 id="declaring">Declaring</h4>
+<p>&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0;&#xC11C;&#xB294; var &#xD0A4;&#xC6CC;&#xB4DC;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xBCC0;&#xC218;&#xB97C; &#xC120;&#xC5B8;&#xD569;&#xB2C8;&#xB2E4;. es6 &#xC774;&#xD6C4;&#xC5D0;&#xB294; const&#xC640; let&#xC73C;&#xB85C; &#xBCC0;&#xACBD;&#xB418;&#xC5C8;&#xC9C0;&#xB9CC;, &#xACB0;&#xAD6D; &#xC2A4;&#xCF54;&#xD504;&#xAC00; &#xB2EC;&#xB77C;&#xC9C4; &#xAC83; &#xC678;&#xC5D0;&#xB294; var&#xC640; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-js"><span class="hljs-comment">// es5 &#xC774;&#xC804;</span>
+<span class="hljs-keyword">var</span> a;
+<span class="hljs-comment">// es6</span>
+<span class="hljs-keyword">const</span> b;
+<span class="hljs-keyword">let</span> c;
+</code></pre>
+<ul>
+<li><a href="https://babeljs.io/repl#?babili=false&amp;browsers=&amp;build=&amp;builtIns=false&amp;spec=false&amp;loose=false&amp;code_lz=Q&amp;debug=false&amp;forceAllTransforms=false&amp;shippedProposals=false&amp;circleciRepo=&amp;evaluate=false&amp;fileSize=false&amp;timeTravel=false&amp;sourceType=module&amp;lineWrap=true&amp;presets=es2015%2Creact%2Cstage-2&amp;prettier=false&amp;targets=&amp;version=6.26.0&amp;envVersion=" target="_blank">Babel PlayGround</a></li>
+</ul>
+<blockquote>
+<p>&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xAC00;&#xC7A5; &#xB9CE;&#xC774; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xD504;&#xB860;&#xD2B8;&#xC5D4;&#xB4DC;&#xC5D0;&#xC11C;&#xB294; Babel&#xC774;&#xB780; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB294; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C; &#xCEF4;&#xD30C;&#xC77C;&#xB418;&#xC5B4; &#xC0AC;&#xC6A9;&#xB418;&#xB294;&#xB370;, &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0; &#xAD6C;&#xD604;&#xB41C; JavaScript &#xBC29;&#xC2DD;&#xC5D0; &#xB530;&#xB77C; &#xB2EC;&#xB9AC;&#xC9C0;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.
+&#xC774;&#xB7EC;&#xD55C; &#xBB38;&#xC81C;&#xB4E4;&#xC744; &#xC778;&#xC2DD;&#xB418;&#xBA74;&#xC11C; &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xD45C;&#xC900;(ECMA)&#xC815;&#xB9BD;&#xACFC; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC758; &#xD638;&#xD658;&#xC131;&#xC744; &#xC704;&#xD55C; &#xC6C0;&#xC9C1;&#xC784;&#xC774; &#xC788;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC758; &#xD638;&#xD658;&#xC131;&#xC744; &#xC704;&#xD574; JavaScript&#xC758; &#xC0C1;&#xC704;&#xBC84;&#xC804;&#xC744; &#xD558;&#xC704;&#xBC84;&#xC804;&#xC73C;&#xB85C; &#xBC14;&#xAFB8;&#xC5B4;&#xC8FC;&#xB294; transpiler &#xC5ED;&#xD560;&#xC744; &#xB2F4;&#xB2F9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<h4 id="assignment">Assignment</h4>
+<p>&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0;&#xC11C;&#xB294; <code>=</code> operator&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xD560;&#xB2F9;&#xC744; &#xD569;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-js">a = <span class="hljs-number">5</span>;
+b = <span class="hljs-string">&apos;variable&apos;</span>;
+c = <span class="hljs-literal">false</span>;
+</code></pre>
+<blockquote>
+<p>&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0;&#xC11C;&#xB294; not defined&#xC640; undefined&#xB97C; &#xAD6C;&#xBCC4;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xB458;&#xC740; &#xC120;&#xC5B8;&#xACFC; &#xD560;&#xB2F9;&#xC73C;&#xB85C; &#xC27D;&#xAC8C; &#xAD6C;&#xBD84;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
+&#xAC04;&#xB2E8;&#xD788; &#xC124;&#xBA85;&#xD558;&#xBA74;, not defined&#xB294; &#xBCC0;&#xC218;&#xB97C; &#xC120;&#xC5B8;&#xD558;&#xC9C0; &#xC54A;&#xC740; &#xAC83;, undefined&#xB294; &#xC120;&#xC5B8;&#xC740; &#xB418;&#xC5C8;&#xC73C;&#xB098; &#xD560;&#xB2F9;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xC0C1;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;.</p>
+</blockquote>
+<h2 id="type">Type</h2>
+<p>&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB294; &#xB290;&#xC2A8;&#xD55C; &#xD0C0;&#xC785; (loosely typed) &#xC5B8;&#xC5B4;, &#xD639;&#xC740; &#xB3D9;&#xC801; (dynamic) &#xC5B8;&#xC5B4;&#xC774;&#xB2E4;. &#xADF8; &#xB9D0;&#xC740;, &#xBCC0;&#xC218;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xBBF8;&#xB9AC; &#xC120;&#xC5B8;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xB2E4;&#xB294; &#xB73B;&#xC774;&#xB2E4;.
+&#xD0C0;&#xC785;&#xC740; &#xD504;&#xB85C;&#xADF8;&#xB7A8;&#xC774; &#xCC98;&#xB9AC;&#xB418;&#xB294; &#xACFC;&#xC815;&#xC5D0;&#xC11C; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xD30C;&#xC545;(&#xCD94;&#xB860;)&#xB420; &#xAC83;&#xC774;&#xB2E4;. &#xB610;&#xD55C; &#xADF8; &#xB9D0;&#xC740; &#xAC19;&#xC740; &#xBCC0;&#xC218;&#xC5D0; &#xC5EC;&#xB7EC; &#xD0C0;&#xC785;&#xC758; &#xAC12;&#xC744; &#xB123;&#xC744; &#xC218; &#xC788;&#xB2E4;&#xB294; &#xB73B;&#xC774;&#xB2E4;.(&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC5B8;&#xC5B4;&#xC758; &#xD2B9;&#xC9D5;)</p>
+<p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Data_structures" target="_blank">MDN - &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC758; &#xC790;&#xB8CC;&#xD615;</a>&#xC744; &#xCC38;&#xACE0;&#xD558;&#xC2DC;&#xBA74; &#xD0C0;&#xC785; &#xB9C8;&#xC2A4;&#xD130;.</p>
+<blockquote>
+<p>&#xC8FC;&#xC758;&#xC0AC;&#xD56D; : &#xBE44;&#xD2B8; &#xB9C8;&#xC2A4;&#xD0B9;(bit masking) &#xAE30;&#xBC95;&#xC73C;&#xB85C; &#xD55C; &#xC22B;&#xC790; &#xC548;&#xC5D0; &#xC5EC;&#xB7EC; Boolean &#xAC12;&#xC744; &#xC800;&#xC7A5;&#xD558;&#xB294;&#xB370;&#xB3C4; &#xC4F8; &#xC218; &#xC788;&#xB2E4;. &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; &#xC774;&#xB7F0; &#xBC29;&#xBC95;&#xC740; &#xB098;&#xC05C; &#xBC29;&#xBC95;&#xC774;&#xC9C0;&#xB9CC;, &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0;&#xC11C;&#xB294; (Boolean &#xAC12;&#xC758; &#xBC30;&#xC5F4;&#xC774;&#xB098; Boolean &#xAC12;&#xB4E4;&#xC744; &#xC774;&#xB984;&#xC788;&#xB294; &#xC18D;&#xC131;&#xB4E4;&#xB85C; &#xAC00;&#xC9C0;&#xB294; &#xAC1D;&#xCCB4; &#xAC19;&#xC740;) Boolean &#xB369;&#xC5B4;&#xB9AC;&#xB97C; &#xB098;&#xD0C0;&#xB0BC; &#xB2E4;&#xB978; &#xBC29;&#xBC95;&#xC774; &#xC5C6;&#xB2E4;. =&gt; number&#xC640; boolean&#xC758; &#xAD6C;&#xBCC4; &#xBC29;&#xBC95;&#xC5D0; &#xB300;&#xD55C; &#xC5B4;&#xB824;&#xC6C0;.</p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> a = {};
+<span class="hljs-keyword">var</span> func = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">b</span>) </span>{
+  b = (b.a = <span class="hljs-number">1</span>);
+  b.b = <span class="hljs-number">2</span>;
+}
+func(a);
+<span class="hljs-built_in">console</span>.log(a); <span class="hljs-comment">// ??</span>
+</code></pre>
+<h2 id="hoisting">Hoisting</h2>
+<p>&#xD638;&#xC774;&#xC2A4;&#xD305;&#xC740; JavaScript&#xC5D0;&#xC11C; &#xC2E4;&#xD589; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;(&#xD2B9;&#xD788; &#xC0DD;&#xC131; &#xBC0F; &#xC2E4;&#xD589; &#xB2E8;&#xACC4;)&#xAC00; &#xC5B4;&#xB5BB;&#xAC8C; &#xB3D9;&#xC791;&#xD558;&#xB294;&#xAC00;&#xC5D0; &#xB300;&#xD55C; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xC0DD;&#xAC01;&#xC73C;&#xB85C; &#xC5EC;&#xACA8;&#xC9D1;&#xB2C8;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xD638;&#xC774;&#xC2A4;&#xD305;&#xC740; &#xC624;&#xD574;&#xB85C; &#xC774;&#xC5B4;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C; &#xB4E4;&#xC5B4;, &#xD638;&#xC774;&#xC2A4;&#xD305;&#xC744; &#xBCC0;&#xC218; &#xBC0F; &#xD568;&#xC218; &#xC120;&#xC5B8;&#xC774; &#xBB3C;&#xB9AC;&#xC801;&#xC73C;&#xB85C; &#xC791;&#xC131;&#xD55C; &#xCF54;&#xB4DC;&#xC758; &#xC0C1;&#xB2E8;&#xC73C;&#xB85C; &#xC62E;&#xACA8;&#xC9C0;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xAC00;&#xB974;&#xCE58;&#xC9C0;&#xB9CC;, &#xC2E4;&#xC81C;&#xB85C;&#xB294; &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBCC0;&#xC218; &#xBC0F; &#xD568;&#xC218; &#xC120;&#xC5B8;&#xC740; &#xCEF4;&#xD30C;&#xC77C; &#xB2E8;&#xACC4;&#xC5D0;&#xC11C; &#xBA54;&#xBAA8;&#xB9AC;&#xC5D0; &#xC800;&#xC7A5;(Refer)&#xB418;&#xC9C0;&#xB9CC;, &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xC785;&#xB825;&#xD55C; &#xC704;&#xCE58;&#xC640; &#xC815;&#xD655;&#xD788; &#xC77C;&#xCE58;&#xD55C; &#xACF3;&#xC5D0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">catName</span>(<span class="hljs-params">name</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;My cat&apos;s name is &quot;</span> + name);
+}
+
+catName(<span class="hljs-string">&quot;Tigger&quot;</span>);
+</code></pre>
+<pre><code class="lang-js">catName(<span class="hljs-string">&quot;Chloe&quot;</span>);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">catName</span>(<span class="hljs-params">name</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;My cat&apos;s name is &quot;</span> + name);
+}
+</code></pre>
+<h2 id="scope">Scope</h2>
+<p>&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0;&#xC11C; &#xC2A4;&#xCF54;&#xD504;&#xB780; &#xC5B4;&#xB5A4; &#xBCC0;&#xC218;&#xB4E4;&#xC5D0; &#xC811;&#xADFC;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0;&#xB97C; &#xC815;&#xC758;&#xD569;&#xB2C8;&#xB2E4;. &#xC2A4;&#xCF54;&#xD504;&#xC5D4; &#xB450; &#xAC00;&#xC9C0; &#xC885;&#xB958;&#xAC00; &#xC788;&#xB294;&#xB370;&#xC694;, &#xC804;&#xC5ED; &#xC2A4;&#xCF54;&#xD504;(global scope)&#xC640; &#xC9C0;&#xC5ED; &#xC2A4;&#xCF54;&#xD504;(local scope)&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h4 id="scope-level">Scope Level</h4>
+<p>&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB294; &#xC804;&#xD1B5;&#xC801;&#xC73C;&#xB85C; &#xD568;&#xC218; &#xB808;&#xBCA8; &#xC2A4;&#xCF54;&#xD504;&#xB97C; &#xC9C0;&#xC6D0;&#xD574;&#xC654;&#xACE0;, &#xC5BC;&#xB9C8; &#xC804;&#xAE4C;&#xC9C0;&#xB9CC; &#xD574;&#xB3C4; &#xBE14;&#xB85D; &#xB808;&#xBCA8; &#xC2A4;&#xCF54;&#xD504;&#xB294; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xC558;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xAC00;&#xC7A5; &#xCD5C;&#xC2E0; &#xBA85;&#xC138;&#xC778; ES6(ECMAScript 6)&#xBD80;&#xD130; &#xBE14;&#xB85D; &#xB808;&#xBCA8; &#xC2A4;&#xCF54;&#xD504;&#xB97C; &#xC9C0;&#xC6D0;&#xD558;&#xAE30; &#xC2DC;&#xC791;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<h2 id="function-level-scope">Function Level Scope</h2>
+<p>&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0;&#xC11C; var&#xD0A4;&#xC6CC;&#xB4DC;&#xB85C; &#xC120;&#xC5B8;&#xB41C; &#xBCC0;&#xC218;&#xB098;, &#xD568;&#xC218; &#xC120;&#xC5B8;&#xC2DD;&#xC73C;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C4; &#xD568;&#xC218;&#xB294; <code>&#xD568;&#xC218; &#xB808;&#xBCA8; &#xC2A4;&#xCF54;&#xD504;</code>&#xB97C; &#xAC16;&#xB294;&#xB2E4;. &#xC989;, <code>&#xD568;&#xC218; &#xB0B4;&#xBD80; &#xC804;&#xCCB4;&#xC5D0;&#xC11C; &#xC720;&#xD6A8;&#xD55C; &#xC2DD;&#xBCC4;&#xC790;</code>&#xAC00; &#xB41C;&#xB2E4;.</p>
+<p>&#xC544;&#xB798; &#xCF54;&#xB4DC;&#xB294; &#xC544;&#xBB34;&#xB7F0; &#xBB38;&#xC81C;&#xC5C6;&#xC774; blue&#xB97C; &#xCD9C;&#xB825;&#xD55C;&#xB2E4;.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">printScope</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) {
+        <span class="hljs-keyword">var</span> color = <span class="hljs-string">&apos;blue&apos;</span>;
+        <span class="hljs-keyword">const</span> blockColor = <span class="hljs-string">&apos;red&apos;</span>; <span class="hljs-comment">// const, let</span>
+    }
+    <span class="hljs-built_in">console</span>.log(color); <span class="hljs-comment">// blue</span>
+    <span class="hljs-built_in">console</span>.log(blockColor); <span class="hljs-comment">// blockColor is not defined</span>
+}
+printScope();
+</code></pre>
+<p>&#xB9CC;&#xC57D;, color&#xAC00; &#xBE14;&#xB85D; &#xB808;&#xBCA8; &#xC2A4;&#xCF54;&#xD504;&#xC600;&#xB2E4;&#xBA74;, color&#xB294; if&#xBB38;&#xC774; &#xB05D;&#xB0A0; &#xB54C; &#xD30C;&#xAD34;&#xB418;&#xACE0; console.log&#xC5D0;&#xC11C; &#xC815;&#xC758;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xB2E4;&#xB294; &#xC5D0;&#xB7EC;&#xBA54;&#xC138;&#xC9C0;&#xB97C; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;.(blockColor&#xC640; &#xAC19;&#xC774; &#xB9D0;&#xC785;&#xB2C8;&#xB2E4;.)
+&#xD558;&#xC9C0;&#xB9CC;, <code>var</code>&#xB294; &#xD568;&#xC218; &#xB808;&#xBCA8; &#xC2A4;&#xCF54;&#xD504;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; <code>printScope</code> &#xD568;&#xC218; &#xB0B4;&#xBD80; &#xC5B4;&#xB514;&#xC5D0;&#xC11C;&#xB4E0; &#xC5D0;&#xB7EC; &#xBC1C;&#xC0DD; &#xC5C6;&#xC774; &#xCC38;&#xC870;&#xD560; &#xC218; &#xC788;&#xB2E4;.</p>
+<h2 id="&#xBE14;&#xB85D;-&#xB808;&#xBCA8;-&#xC2A4;&#xCF54;&#xD504;">&#xBE14;&#xB85D; &#xB808;&#xBCA8; &#xC2A4;&#xCF54;&#xD504;</h2>
+<p>ES6&#xC758; let, const&#xD0A4;&#xC6CC;&#xB4DC;&#xB294; &#xBE14;&#xB85D; &#xB808;&#xBCA8; &#xC2A4;&#xCF54;&#xD504; &#xBCC0;&#xC218;&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4; &#xC900;&#xB2E4;</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.ecma-international.org/ecma-262/8.0/index.html#sec-executable-code-and-execution-contexts" target="_blank">ECMA - Executable Code and Execution Contexts</a></li>
+<li><a href="https://developer.mozilla.org/ko/docs/Glossary/Hoisting" target="_blank">MDN - Hoistring</a></li>
+<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Data_structures" target="_blank">MDN - &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC758; &#xC790;&#xB8CC;&#xD615;</a></li>
+<li><a href="https://medium.com/@khwsc1/%EB%B2%88%EC%97%AD-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8A%A4%EC%BD%94%ED%94%84%EC%99%80-%ED%81%B4%EB%A1%9C%EC%A0%80-javascript-scope-and-closures-8d402c976d19" target="_blank">TOAST - &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC758; &#xC2A4;&#xCF54;&#xD504;&#xC640; &#xD074;&#xB85C;&#xC800;</a></li>
+<li><a href="https://meetup.toast.com/posts/86" target="_blank">TOAST - &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC758; &#xC2A4;&#xCF54;&#xD504;&#xC640; &#xD074;&#xB85C;&#xC800;</a></li>
+<li><a href="https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0" target="_blank">Value vs. Reference in Javascript</a></li>
+<li><a href="http://dmitrysoshnikov.com/ecmascript/chapter-4-scope-chain/" target="_blank">Zell Liew - &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC2A4;&#xCF54;&#xD504;&#xC640; &#xD074;&#xB85C;&#xC800;</a></li>
+</ul>
 
                                 
                                 </section>
@@ -569,7 +664,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Scope","level":"1.4.1","depth":2,"next":{"title":"Closure","level":"1.4.2","depth":2,"path":"js/Closure.md","ref":"js/Closure.md","articles":[]},"previous":{"title":"JavaScript","level":"1.4","depth":1,"path":"js/README.md","ref":"js/README.md","articles":[{"title":"Scope","level":"1.4.1","depth":2,"path":"js/Scope.md","ref":"js/Scope.md","articles":[]},{"title":"Closure","level":"1.4.2","depth":2,"path":"js/Closure.md","ref":"js/Closure.md","articles":[]},{"title":"Prototype","level":"1.4.3","depth":2,"path":"js/Prototype.md","ref":"js/Prototype.md","articles":[]},{"title":"Functional","level":"1.4.4","depth":2,"path":"js/Functional.md","ref":"js/Functional.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"root":"./contents","styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"token":"","configuration":{"alwaysSendReferrer":true}},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"[Seolhun](https://github.com/Seolhun)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"How to be WebFrontend Developer","gitbook":">= 3.0.0","description":"How to be WebFrontend Developer"},"file":{"path":"js/Scope.md","mtime":"2018-09-08T07:42:23.290Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-06T04:58:30.949Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Scope","level":"1.4.1","depth":2,"next":{"title":"Closure","level":"1.4.2","depth":2,"path":"js/Closure.md","ref":"js/Closure.md","articles":[]},"previous":{"title":"JavaScript","level":"1.4","depth":1,"path":"js/README.md","ref":"js/README.md","articles":[{"title":"Scope","level":"1.4.1","depth":2,"path":"js/Scope.md","ref":"js/Scope.md","articles":[]},{"title":"Closure","level":"1.4.2","depth":2,"path":"js/Closure.md","ref":"js/Closure.md","articles":[]},{"title":"Prototype","level":"1.4.3","depth":2,"path":"js/Prototype.md","ref":"js/Prototype.md","articles":[]},{"title":"Functional","level":"1.4.4","depth":2,"path":"js/Functional.md","ref":"js/Functional.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"root":"./contents","styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"token":"","configuration":{"alwaysSendReferrer":true}},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"[Seolhun](https://github.com/Seolhun)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"How to be WebFrontend Developer","gitbook":">= 3.0.0","description":"How to be WebFrontend Developer"},"file":{"path":"js/Scope.md","mtime":"2018-10-20T07:15:28.566Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-20T07:15:56.811Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
