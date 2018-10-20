@@ -43,9 +43,16 @@ c = false;
 자바스크립트는 느슨한 타입 (loosely typed) 언어, 혹은 동적 (dynamic) 언어이다. 그 말은, 변수의 타입을 미리 선언할 필요가 없다는 뜻이다.
 타입은 프로그램이 처리되는 과정에서 자동으로 파악(추론)될 것이다. 또한 그 말은 같은 변수에 여러 타입의 값을 넣을 수 있다는 뜻이다.(스크립트 언어의 특징)
 
+```js
+const arr = [undefined, null, 0, NaN, false, '', {}, []];
+function printTypes(value) {
+	return arr.map((value) => typeof value);
+}
+printTypes(...arr);
+```
 
-> 주의사항 : 비트 마스킹(bit masking) 기법으로 한 숫자 안에 여러 Boolean 값을 저장하는데도 쓸 수 있다. 일반적으로 이런 방법은 나쁜 방법이지만, 자바스크립트에서는 (Boolean 값의 배열이나 Boolean 값들을 이름있는 속성들로 가지는 객체 같은) Boolean 덩어리를 나타낼 다른 방법이 없다. => number와 boolean의 구별 방법에 대한 어려움.
-
+> null은 null이 아니라 object로 출력된다는 것을 유의해야 합니다.
+null의 타입은 null로 출력되어야 하지만, 현재 구현된 웹 페이지들의 여파를 생각하여 고쳐지지 않고 있는 Known-Issue 중 하나입니다.
 
 ## References
 - [Value vs. Reference in Javascript](https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0)

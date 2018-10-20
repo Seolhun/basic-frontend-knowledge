@@ -29,13 +29,11 @@
 예전에 ES6에 대해 학습하면서 간단히 정리한 글이다. 이를 참고해보자.
 
 ## Babel이란?
-바벨은 처음에 5To6라는 이름으로 시작되었으나, 현재는 Babel이란 이름으로 5에서 6만이 아닌 6~이상의 상위버전을 하위버전으로 바꾸어주는 transpiler 역할을 담당하고 있습니다.
-
 자바스크립트는 브라우저에서 컴파일되어 사용되는데, 브라우저(기업에서 구현)에 구현된 JavaScript 방식에 따라 달라지는 문제가 발생되었습니다.
 
 이러한 브라우저의 의존되는 자바스크립트의 문제를 해결하기 위해, 자바스크립트 표준(ECMA)정립과 브라우저의 호환성을 위한 움직임으로 생겨난 오픈소스입니다.
 
-
+오픈소스인 바벨은 처음에 5To6라는 이름으로 시작되었으나, 5에서 6만이 아닌 6~이상의 상위버전을 하위버전으로 바꾸어주는 transpiler 역할을 담당하면서 이름도 Babel로서 다양한 babel packages를 제공하고 있습니다.
 
 ## References
 - [MDN - What is Javascript](https://developer.mozilla.org/ko/docs/Learn/JavaScript/First_steps/What_is_JavaScript)
