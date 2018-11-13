@@ -16,10 +16,13 @@
 	* [Browswer Rendering](html/BrowswerRendering.md)
 
 * [JavaScript](js/README.md)
-	* [Scope](js/Scope.md)
-	* [Closure](js/Closure.md)
-	* [Prototype](js/Prototype.md)
-	* [Functional](js/Functional.md)
+* Basic
+	* [Variable](js/basic/Variable.md)
+* Advanced
+	* [Scope](js/advanced/Scope.md)
+	* [Closure](js/advanced/Closure.md)
+	* [Prototype](js/advanced/Prototype.md)
+	* [Functional](js/advanced/Functional.md)
 
 * [CSS](css/README.md)
 	* [Selector](css/Selector.md)
