@@ -15,10 +15,8 @@ JavaScript(ES6)는 Function level과 Block Level, Lexical Scope 규칙을 따릅
 function printScope() {
 	if (true) {
 		var color = 'blue';
-		const blockColor = 'red'; // const, let
 	}
 	console.log(color); // blue
-	console.log(blockColor); // blockColor is not defined
 }
 printScope();
 ```
@@ -39,9 +37,6 @@ printScope();
 ```
 
 만약, blockColor는 블록 레벨 스코프로서, if문이 끝날 때 파괴되어 console.log에서 정의되지 않았다는 에러메세지를 보여주게 됩니다.
-
-## 스코프 체인
-
 
 ## - Hoisting
 호이스팅은 끌어올린다는 의미처럼, `변수 및 함수 선언은 컴파일 단계에서 메모리에 저장`되어 이를 끌어올린 것처럼 사용할 수 있습니다.
