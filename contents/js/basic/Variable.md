@@ -1,4 +1,4 @@
-# Javascript, Variable?
+# Javascript, Variable
 
 ## 변수
 모든 프로그래밍 언어에는 변수가 존재하며 이를 통해 각각의 문제를 해결할 수 있습니다.
@@ -48,7 +48,7 @@ const arr = [undefined, null, 0, NaN, false, '', {}, []];
 function printTypes(value) {
 	return arr.map((value) => typeof value);
 }
-printTypes(...arr);
+printTypes(arr);
 ```
 
 > null은 null이 아니라 object로 출력된다는 것을 유의해야 합니다.
