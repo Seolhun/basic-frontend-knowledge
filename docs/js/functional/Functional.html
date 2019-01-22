@@ -52,7 +52,7 @@
     <link rel="next" href="../../css/" />
     
     
-    <link rel="prev" href="Prototype.html" />
+    <link rel="prev" href="../advanced/Prototype.html" />
     
 
     </head>
@@ -320,9 +320,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="Scope.html">
+        <li class="chapter " data-level="1.6.1" data-path="../advanced/Scope.html">
             
-                <a href="Scope.html">
+                <a href="../advanced/Scope.html">
             
                     
                     Scope
@@ -333,9 +333,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="Closure.html">
+        <li class="chapter " data-level="1.6.2" data-path="../advanced/Closure.html">
             
-                <a href="Closure.html">
+                <a href="../advanced/Closure.html">
             
                     
                     Closure
@@ -346,9 +346,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="Prototype.html">
+        <li class="chapter " data-level="1.6.3" data-path="../advanced/Prototype.html">
             
-                <a href="Prototype.html">
+                <a href="../advanced/Prototype.html">
             
                     
                     Prototype
@@ -571,6 +571,51 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="javascript-functional">Javascript, Functional</h1>
+<h2 id="currying">Currying</h2>
+<p>Named after Haskell Brooks Curry, <code>currying is the process of breaking down a function into a series of functions that each take a single argument</code>.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum3</span>(<span class="hljs-params">x, y, z</span>) </span>{
+  <span class="hljs-keyword">return</span> x + y + z;
+}
+<span class="hljs-built_in">console</span>.log(sum3(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>) <span class="hljs-comment">// 6</span>
+
+<span class="hljs-comment">// Currying</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">curryingSum3</span>(<span class="hljs-params">x</span>) </span>{
+    <span class="hljs-keyword">return</span> (y) =&gt; {
+            <span class="hljs-keyword">return</span> (z) =&gt; {
+                <span class="hljs-keyword">return</span> x + y + z;
+            }
+    }
+}
+<span class="hljs-comment">// curryingSum3(1)(2)(3) = 6</span>
+</code></pre>
+<blockquote>
+<p>This works because JS supports <code>closures</code>.</p>
+</blockquote>
+<h2 id="the-strategy">The Strategy</h2>
+<p>Examining the two forms of sum3 reveals that the actual function body from the plain function is moved as-is into the last function in the chain. Before we reach the last level, we won&#x2019;t have all the arguments in the execution scope.</p>
+<h2 id="curry-wrapper">Curry Wrapper</h2>
+<p>Since we&#x2019;re using a wrapper function in place of the real function, we can create another function that generates this wrapper function. We&#x2019;ll call this new function curry&#x200A;&#x2014;&#x200A;a higher order function that returns a series of nested accumulator functions that invoke the callback function fn in the end.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">curry</span>(<span class="hljs-params">fn</span>) </span>{
+  <span class="hljs-keyword">return</span> (x) =&gt; {
+    <span class="hljs-keyword">return</span> (y) =&gt; {
+      <span class="hljs-keyword">return</span> (z) =&gt; {
+        <span class="hljs-keyword">return</span> fn(x, y, z);
+      };
+    };
+  };
+}
+<span class="hljs-keyword">const</span> sum3 = curry((x, y, z) =&gt; {
+  <span class="hljs-keyword">return</span> x + y + z;
+});
+sum3(<span class="hljs-number">1</span>)(<span class="hljs-number">2</span>)(<span class="hljs-number">3</span>)
+</code></pre>
+<hr>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://hackernoon.com/currying-in-js-d9ddc64f162e" target="_blank">Currying in JS - Medium</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target="_blank">Closures - MDN</a></li>
+<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/arguments" target="_blank">Arguments - MDN</a></li>
+</ul>
 
                                 
                                 </section>
@@ -598,7 +643,7 @@
 
             
                 
-                <a href="Prototype.html" class="navigation navigation-prev " aria-label="Previous page: Prototype">
+                <a href="../advanced/Prototype.html" class="navigation navigation-prev " aria-label="Previous page: Prototype">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -614,7 +659,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Functional","level":"1.6.4","depth":2,"next":{"title":"CSS","level":"1.7","depth":1,"path":"css/README.md","ref":"css/README.md","articles":[{"title":"Selector","level":"1.7.1","depth":2,"path":"css/Selector.md","ref":"css/Selector.md","articles":[]},{"title":"Position","level":"1.7.2","depth":2,"path":"css/Position.md","ref":"css/Position.md","articles":[]},{"title":"Display","level":"1.7.3","depth":2,"path":"css/display/README.md","ref":"css/display/README.md","articles":[{"title":"Grid","level":"1.7.3.1","depth":3,"path":"css/display/Grid.md","ref":"css/display/Grid.md","articles":[]},{"title":"Flex","level":"1.7.3.2","depth":3,"path":"css/display/Flex.md","ref":"css/display/Flex.md","articles":[]},{"title":"Block","level":"1.7.3.3","depth":3,"path":"css/display/Block.md","ref":"css/display/Block.md","articles":[]}]}]},"previous":{"title":"Prototype","level":"1.6.3","depth":2,"path":"js/advanced/Prototype.md","ref":"js/advanced/Prototype.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./contents","styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"token":"","configuration":{"alwaysSendReferrer":true}},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"[Seolhun](https://github.com/Seolhun)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"How to be WebFrontend Developer","gitbook":">= 3.0.0","description":"How to be WebFrontend Developer"},"file":{"path":"js/advanced/Functional.md","mtime":"2018-10-20T12:33:11.783Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-20T18:11:57.158Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Functional","level":"1.6.4","depth":2,"next":{"title":"CSS","level":"1.7","depth":1,"path":"css/README.md","ref":"css/README.md","articles":[{"title":"Selector","level":"1.7.1","depth":2,"path":"css/Selector.md","ref":"css/Selector.md","articles":[]},{"title":"Position","level":"1.7.2","depth":2,"path":"css/Position.md","ref":"css/Position.md","articles":[]},{"title":"Display","level":"1.7.3","depth":2,"path":"css/display/README.md","ref":"css/display/README.md","articles":[{"title":"Grid","level":"1.7.3.1","depth":3,"path":"css/display/Grid.md","ref":"css/display/Grid.md","articles":[]},{"title":"Flex","level":"1.7.3.2","depth":3,"path":"css/display/Flex.md","ref":"css/display/Flex.md","articles":[]},{"title":"Block","level":"1.7.3.3","depth":3,"path":"css/display/Block.md","ref":"css/display/Block.md","articles":[]}]}]},"previous":{"title":"Prototype","level":"1.6.3","depth":2,"path":"js/advanced/Prototype.md","ref":"js/advanced/Prototype.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./contents","styles":{"website":"styles/website.css"},"pluginsConfig":{"ga":{"token":"","configuration":{"alwaysSendReferrer":true}},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"[Seolhun](https://github.com/Seolhun)","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"How to be WebFrontend Developer","gitbook":">= 3.0.0","description":"How to be WebFrontend Developer"},"file":{"path":"js/functional/Functional.md","mtime":"2019-01-22T04:31:51.970Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-22T05:36:50.933Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

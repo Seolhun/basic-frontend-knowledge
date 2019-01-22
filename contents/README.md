@@ -20,7 +20,7 @@
 	* [Scope](js/advanced/Scope.md)
 	* [Closure](js/advanced/Closure.md)
 	* [Prototype](js/advanced/Prototype.md)
-	* [Functional](js/advanced/Functional.md)
+	* [Functional](js/functional/Functional.md)
 
 ## [CSS](css/README.md)
 * [Selector](css/Selector.md)
