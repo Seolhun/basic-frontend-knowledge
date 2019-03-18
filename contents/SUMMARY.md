@@ -18,6 +18,8 @@
 * [JavaScript](js/README.md)
 	* [Basic](js/basic/README.md)
 		* [Variable](js/basic/Variable.md)
+		* [Object](js/basic/Object.md)
+		* [Array](js/basic/Array.md)
 	* [Advanced](js/advanced/README.md)
 		* [Scope](js/advanced/Scope.md)
 		* [Closure](js/advanced/Closure.md)

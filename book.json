@@ -10,15 +10,21 @@
 		"glossary": "GLOSSARY.md"
 	},
 	"pluginsConfig": {
+    "theme-gestalt": {
+			"logo": "./assets/images/logo.png",
+			"favicon": "./assets/images/favicon.png",
+			"baseUrl": null,
+			"excludeDefaultStyles": true,
+			"doNotHideChildrenChapters" : false
+		},
 		"ga": {
-				"token": "",
-				"configuration": {
-						"alwaysSendReferrer": true
-				}
+			"token": "",
+			"configuration": {
+					"alwaysSendReferrer": true
+			}
 		}
 	},
-	"plugins": [],
 	"styles": {
-		"website": "styles/website.css"
+		"website": "./assets/styles/website.css"
 	}
 }
