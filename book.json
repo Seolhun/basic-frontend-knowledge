@@ -1,7 +1,7 @@
 {
   "root": "./contents",
-  "title": "How to be WebFrontend Developer",
-  "description": "How to be WebFrontend Developer",
+  "title": "How to be Web Frontend Developer",
+  "description": "How to be Web Frontend Developer",
   "author": "[Seolhun](https://github.com/Seolhun)",
 	"gitbook": ">= 3.0.0",
 	"structure": {
