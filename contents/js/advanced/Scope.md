@@ -55,8 +55,30 @@ printScope();
 var와는 다르게 블록 스코프는 block({})	 내부에서만 유효하기 때문에 if문이 끝날 때 파괴되어, 해당 값을 참조하여 사용할 경우 not defined 에러메세지를 보게 됩니다.
 
 ### 3. Lexical Scope
-- Not yet
+랙시컬 스코프는 `어휘적 유효 범위`라는 의미로 사용됩니다.
 
+간단하게 설명하면, 어떠한 함수가 가지는 유효 범위를 동적으로 가진다는 이야기가 됩니다. MDN 예제를 같이 보도록 합시다.
+
+```js
+function globalFunction() {
+		// name is a local variable created by globalFunction
+		var name = "Seolhun";
+		// localFunction() is the inner function, a closure
+    function localFunction() {
+				// localFunction() uses variable declared in the parent function
+        alert (name);
+    }
+    localFunction();
+}
+globalFunction(); // alert => "Seolhun"
+```
+name이란 변수와 localFunction은 globalrFunction에 의해 생성됩니다.
+중요한 것은, localFunction은 자신의 함수형 스코프 밖에 있는 name에 접근할 수 있는 것입니다.
+이 부분이 바로 Lexical Scope라고 할 수 있습니다. 현재 어휘적 유효 범위가 동적으로 결정되는 것입니다.
+
+즉, 중첩된 함수들에서 내부함수의 유효 범위는 외부 함수 유효 범위에서 선언된 변수들에 접근할 권한을 가질 수 있다는 것입니다.
+
+Lexical Scope는 Closure와 매우 연관이 깊은데, `현재 함수의 유효적 범위를 외부에서 참조할 수 있게 기억하고 있는 것입니다`.
 
 ### - Hoisting
 호이스팅은 끌어올린다는 의미처럼, `변수 및 함수 선언은 컴파일 단계에서 메모리에 저장`되어 이를 끌어올린 것처럼 사용할 수 있습니다.
@@ -76,8 +98,8 @@ let letName = 'Let'; // not defined
 const constName = 'Const'; // not defined
 ```
 
-위의 예제에서 알 수 있듯이, 함수와 변수 선언(var)은 호이스팅되었음을 알 수 있습니다. 
-변수를 보면 알수 있듯이 선언만 호이스팅이 되기 때문에 var 변수는 undefined를 출력하게 됩니다. 
+위의 예제에서 알 수 있듯이, 함수와 변수 선언(var)은 호이스팅되었음을 알 수 있습니다.
+변수를 보면 알수 있듯이 선언만 호이스팅이 되기 때문에 var 변수는 undefined를 출력하게 됩니다.
 실질적으로는 let도 호이스팅이 되지만, 참조할 경우 `temporal dead zone`으로 인해 not defined를 보게 됩니다. const는 호이스팅되지 않습니다.
 
 > Temporal dead zone and errors with let
@@ -88,9 +110,11 @@ const constName = 'Const'; // not defined
 
 - var는 함수형 스코프를 가집니다.
 - let과 const는 블록 스코프를 가집니다.
-- 함수형 스코프와 블록 스코프의 차이는 스코프의 범위입니다. 
-- 함수와 변수 선언은 호이스팅되어, 같은 스코프 안에서 위에서 선언된 것처럼 참조하여 사용할 수 있습니다.(우리가 참조하는 것은 컴파일 되어 메모리에 저장된 참조 값이기 때문입니다.)
-
+- 함수형 스코프와 블록 스코프의 차이는 스코프의 범위입니다.
+- 함수와 변수 선언은 호이스팅되어, 같은 스코프 안에서 위에서 선언된 것처럼 참조하여 사용할 수 있습니다. (우리가 참조하는 것은 컴파일 되어 메모리에 저장된 참조 값이기 때문입니다.)
+	- var는 선언이 호이스팅되며 참조할 수 있습니다. 하지만, undefined입니다.
+	- 블록 스코프는 let은 호이스팅되지만 참조할 수 없으며, const는 호이스팅, 참조 둘다 되지 않습니다.
+- 렉시컬 스코프는 클로저와 매우 연관이 깊으며, 현재 어휘의 유효 범위를 의미합니다.
 
 ## Outro
 기본적으로 자바스크립트는 ECMAScript 언어 명세를 따르고 있습니다. Scope에 관련된 내용을 참고하고 싶으신 분들은 [ECMA - 명세 8장](https://www.ecma-international.org/ecma-262/8.0/index.html#sec-executable-code-and-execution-contexts)의 실행코드와 실행컨텍스트 부분에서 동작 방식을 확인할 수 있습니다.
@@ -99,3 +123,4 @@ const constName = 'Const'; // not defined
 - [ECMA - Executable Code and Execution Contexts](https://www.ecma-international.org/ecma-262/8.0/index.html#sec-executable-code-and-execution-contexts)
 - [TOAST - 자바스크립트의 스코프와 클로저](https://meetup.toast.com/posts/86)
 - [MDN - Hoistring](https://developer.mozilla.org/ko/docs/Glossary/Hoisting)
+- [MDN - Closure](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures)
