@@ -1,5 +1,7 @@
 # How to be Front-End Developer
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Seolhun/frontend.svg)](https://greenkeeper.io/)
+
 ## Contents
 1. About Front-End
 	- What we do?
