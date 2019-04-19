@@ -1,13 +1,16 @@
-# Cross Browser
+# Browser
 
-## JS
+## Cross-Browser
+### JS
 #### Events
 
-## HTML
+### HTML
 #### SVG
 
-## CSS
+### CSS
 #### Flex
+
+## Optimization
 
 ---
 
